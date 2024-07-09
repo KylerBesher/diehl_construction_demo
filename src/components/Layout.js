@@ -2,15 +2,14 @@ import * as React from "react";
 import { Helmet } from "react-helmet";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import "../style/bulma-style.sass";
-import "../style/custom-style.sass";
+import "tachyons/css/tachyons.min.css";
 import useSiteMetadata from "./SiteMetadata";
 import { withPrefix } from "gatsby";
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata();
   return (
-    <div>
+    <div className="flex flex-column min-vh-100">
       <Helmet>
         <html lang="en" />
         <title>{title}</title>
@@ -50,7 +49,7 @@ const TemplateWrapper = ({ children }) => {
         />
       </Helmet>
       <Navbar />
-      <div>{children}</div>
+      <div className="flex-auto">{children}</div>
       <Footer />
     </div>
   );

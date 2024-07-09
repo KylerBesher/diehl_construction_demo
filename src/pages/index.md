@@ -1,16 +1,13 @@
 ---
 templateKey: index-page
-title: Great coffee with a conscience
-image: /img/home-jumbotron.jpg
-heading: Great coffee with a conscience
-subheading: Support sustainable farming while enjoying a cup
+title: Diehl Construction
+heading: Diehl Construction
+subheading: Strength Beneath Your Feet, Protection Above All
+image: /img/gallery/dirt-work-img.jpg
 mainpitch:
-  title: Why Kaldi
+  title: About Us
   description: >
-    Kaldi is the coffee store for everyone who believes that great coffee
-    shouldn't just taste good, it should do good too. We source all of our beans
-    directly from small scale sustainable farmers and make sure part of the
-    profits are reinvested in their communities.
+    Diehl Construction is a family-owned and operated business, deeply committed to our local communities in Salina, Abilene, Lindsborg, and Concordia. Beginning business in 1975, we have dedicated nearly 50 years to serving our neighbors with expert foundation repair and waterproofing services. Our focus is on providing lasting, high-quality solutions that meet your needs. We take genuine pride in our work, ensuring every job is done right. For us, it's not just about completing a project, it's about building trust and satisfaction within our community. Your peace of mind and satisfaction are our top priorities.
 description: >-
   Kaldi is the ultimate spot for coffee lovers who want to learn about their
   java’s origin and support the farmers that grew it. We take coffee production,
@@ -18,27 +15,27 @@ description: >-
   anyone.
 intro:
   blurbs:
-    - image: /img/coffee.png
+    - image: /img/foundation_repair.jpeg
       text: >
         We sell green and roasted coffee beans that are sourced directly from
         independent farmers and farm cooperatives. We’re proud to offer a
         variety of coffee beans grown with great care for the environment and
         local communities. Check our post or contact us directly for current
         availability.
-    - image: /img/coffee-gear.png
+    - image: /img/waterproofing.jpeg
       text: >
         We offer a small, but carefully curated selection of brewing gear and
         tools for every taste and experience level. No matter if you roast your
         own beans or just bought your first french press, you’ll find a gadget
         to fall in love with in our shop.
-    - image: /img/tutorials.png
+    - image: /img/dirt_work.jpeg
       text: >
         Love a great cup of coffee, but never knew how to make one? Bought a
         fancy new Chemex but have no clue how to use it? Don't worry, we’re here
         to help. You can schedule a custom 1-on-1 consultation with our baristas
         to learn anything you want to know about coffee roasting and brewing.
         Email us or call the store for details.
-    - image: /img/meeting-space.png
+    - image: /img/egress_windows.jpeg
       text: >
         We believe that good coffee has the power to bring people together.
         That’s why we decided to turn a corner of our shop into a cozy meeting

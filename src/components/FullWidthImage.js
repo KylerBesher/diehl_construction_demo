@@ -4,11 +4,11 @@ import { GatsbyImage } from "gatsby-plugin-image";
 
 export default function FullWidthImage(props) {
   const {
-    height = 400,
+    height = '75vh',
     img,
     title,
     subheading,
-    imgPosition = "top left",
+    imgPosition = "center center",
   } = props;
 
   return (
@@ -18,62 +18,46 @@ export default function FullWidthImage(props) {
         style={{
           display: "grid",
           alignItems: "center",
+          position: "relative",
         }}
       >
         {img?.url ? (
           <img
             src={img}
-            objectFit={"cover"}
-            objectPosition={imgPosition}
-            style={{
-              gridArea: "1/1",
-              // You can set a maximum height for the image, if you wish.
-              height: height,
-              width: "100%",
-            }}
-            // This is a presentational image, so the alt should be an empty string
+            style={{ gridArea: "1/1", height: height, width: "100%", objectFit: "cover", objectPosition: imgPosition, }}
             alt=""
           />
         ) : (
           <GatsbyImage
             image={img}
-            objectFit={"cover"}
-            objectPosition={imgPosition}
-            style={{
-              gridArea: "1/1",
-              // You can set a maximum height for the image, if you wish.
-              maxHeight: height,
-            }}
+            style={{ gridArea: "1/1", height: height, width: "100%", objectFit: "cover", objectPosition: imgPosition, }}
             layout="fullWidth"
-            // You can optionally force an aspect ratio for the generated image
             aspectratio={3 / 1}
-            // This is a presentational image, so the alt should be an empty string
             alt=""
             formats={["auto", "webp", "avif"]}
           />
         )}
         {(title || subheading) && (
           <div
+            className="box-content"
             style={{
-              // By using the same grid area for both, they are stacked on top of each other
               gridArea: "1/1",
-              position: "relative",
-              // This centers the other elements inside the hero component
-              placeItems: "center",
-              display: "grid",
+              position: "absolute",
+              top: "40px",
+              bottom: "40px",
+              color: "#fff",
+              backgroundColor: "rgba(0, 0, 0, 0.6)",
+              padding: "10px 20px",
+              borderRadius: "5px",
             }}
           >
-            {/* Any content here will be centered in the component */}
             {title && (
               <h1
                 className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
                 style={{
-                  boxShadow:
-                    "rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px",
-                  backgroundColor: "rgb(255, 68, 0)",
-                  color: "white",
-                  lineHeight: "1",
-                  padding: "0.25em",
+                  marginBottom: "0.5em",
+                  color: "#f79c42",
+                  textShadow: "2px 2px 4px rgba(0, 0, 0, 0.6)",
                 }}
               >
                 {title}
@@ -83,13 +67,8 @@ export default function FullWidthImage(props) {
               <h3
                 className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
                 style={{
-                  boxShadow:
-                    "rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px",
-                  backgroundColor: "rgb(255, 68, 0)",
-                  color: "white",
-                  lineHeight: "1",
-                  padding: "0.25rem",
-                  marginTop: "0.5rem",
+                  color: "#f79c42",
+                  textShadow: "2px 2px 4px rgba(0, 0, 0, 0.6)",
                 }}
               >
                 {subheading}
@@ -98,6 +77,24 @@ export default function FullWidthImage(props) {
           </div>
         )}
       </div>
+      <style jsx>{`
+        @media (min-width: 1024px) {
+          .box-content {
+            width: 50%;
+            left: 0;
+            right: auto;
+            margin-left: 40px;
+          }
+        }
+
+        @media (max-width: 1023px) {
+          .box-content {
+            width: calc(100% - 80px);
+            left: 40px;
+            right: 40px;
+          }
+        }
+      `}</style>
     </React.Fragment>
   );
 }
@@ -105,6 +102,6 @@ export default function FullWidthImage(props) {
 FullWidthImage.propTypes = {
   img: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
-  height: PropTypes.number,
+  height: PropTypes.string,
   subheading: PropTypes.string,
 };

@@ -1,0 +1,48 @@
+{{ define "main" }}
+
+
+<script>
+
+$(document).scroll(function(){
+  $('#scroll-away').css('top', 150 - $(window).scrollTop() )
+})
+
+</script>
+<div class="w-100 center tc fixed" style="top:150px" id="scroll-away">
+<div class=" ">
+<div class="w-100 relative  mb1">
+<h1 class="f2 f1-l b di lh-title mb3  ph3 pv1 primary bg-white  mw6 ">
+Check out my projects!
+</h1>
+</div>
+
+
+<div class="w-100 relative ">
+<p class="b f3 di lh-title mb3 ph3 pv1  primary bg-white  mw6 ">
+I hope we can add yours to this list!
+</p>
+</div>
+</div>
+</div>
+
+<div class=" pv5 pv6-m pv7-l ph3 bg-center cover flex flex-column " style="background-image: url('/img/projects.svg'); min-height:500px;">
+
+</div>
+
+
+<div class="w-100 bg-grey-1">
+<div class="mw7 center bg-grey-1">
+<h2 class="f2 ph3 pt3"> My Past Projects  </h2>
+
+  <ul class="flex-ns flex-wrap mhn1-ns pa3">
+      {{ range (.Paginator 8).Pages.ByPublishDate.Reverse }}
+          <div class="w-50-ns ph1-ns flex">
+            {{ .Render "li"}}
+          </div>
+      {{ end }}
+  </ul>
+  {{ partial "pagination" . }}
+  </div>
+</div>
+
+{{end}}

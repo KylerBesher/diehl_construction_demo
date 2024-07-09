@@ -6,9 +6,9 @@ import { getImage } from "gatsby-plugin-image";
 import Layout from "../components/Layout";
 import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
+import CarouselWrapper from "../components/Carousel";
 import FullWidthImage from "../components/FullWidthImage";
 
-// eslint-disable-next-line
 export const IndexPageTemplate = ({
   image,
   title,
@@ -17,6 +17,7 @@ export const IndexPageTemplate = ({
   mainpitch,
   description,
   intro,
+  images,
 }) => {
   const heroImage = getImage(image) || image;
 
@@ -45,25 +46,16 @@ export const IndexPageTemplate = ({
                       <p>{description}</p>
                     </div>
                   </div>
+                  
                   <Features gridItems={intro.blurbs} />
                   <div className="columns">
-                    <div className="column is-12 has-text-centered">
-                      <Link className="btn" to="/products">
-                        See all products
-                      </Link>
+                    <div className="column is-12">
+                      <h3 className="has-text-weight-semibold is-size-2">
+                        Gallery
+                      </h3>
                     </div>
                   </div>
-                  <div className="column is-12">
-                    <h3 className="has-text-weight-semibold is-size-2">
-                      Latest stories
-                    </h3>
-                    <BlogRoll />
-                    <div className="column is-12 has-text-centered">
-                      <Link className="btn" to="/blog">
-                        Read more
-                      </Link>
-                    </div>
-                  </div>
+                  <CarouselWrapper images={images} />
                 </div>
               </div>
             </div>
@@ -84,10 +76,12 @@ IndexPageTemplate.propTypes = {
   intro: PropTypes.shape({
     blurbs: PropTypes.array,
   }),
+  images: PropTypes.array,
 };
 
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
+  const images = data.allFile.edges.map(edge => edge.node);
 
   return (
     <Layout>
@@ -99,6 +93,7 @@ const IndexPage = ({ data }) => {
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
         intro={frontmatter.intro}
+        images={images}
       />
     </Layout>
   );
@@ -108,6 +103,17 @@ IndexPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
+    }),
+    allFile: PropTypes.shape({
+      edges: PropTypes.arrayOf(
+        PropTypes.shape({
+          node: PropTypes.shape({
+            id: PropTypes.string,
+            name: PropTypes.string,
+            publicURL: PropTypes.string,
+          }),
+        })
+      ),
     }),
   }),
 };
@@ -142,6 +148,18 @@ export const pageQuery = graphql`
           }
           heading
           description
+        }
+      }
+    }
+    allFile(filter: { relativeDirectory: { eq: "gallery" } }) {
+      edges {
+        node {
+          id
+          name
+          publicURL
+          childImageSharp {
+            gatsbyImageData(width: 600, quality: 80, layout: CONSTRAINED)
+          }
         }
       }
     }
