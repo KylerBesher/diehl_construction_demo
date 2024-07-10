@@ -1,9 +1,6 @@
-import React, { useState } from "react";
 import { Link } from "gatsby";
-import github from "../img/github-icon.svg";
-// import { Facebook } from '@mui/icons';
-// import { FacebookIcon } from '@mui/icons-material';
-import { Facebook as FacebookIcon, Settings as SettingsIcon, AccountCircle as AccountCircleIcon } from '@mui/icons-material';
+import React, { useState } from "react";
+import { Facebook as FacebookIcon } from '@mui/icons-material';
 
 
 import logo from "../img/diehl_logo.png";

@@ -1,14 +1,13 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Link, graphql } from "gatsby";
+import { graphql } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
+import PropTypes from "prop-types";
+import React from "react";
 
-import Layout from "../components/Layout";
-import Features from "../components/Features";
-import BlogRoll from "../components/BlogRoll";
-import CarouselWrapper from "../components/Carousel";
-import FullWidthImage from "../components/FullWidthImage";
 import AboutUs from "../components/AboutUs";
+import CarouselWrapper from "../components/Carousel";
+import Features from "../components/Features";
+import FullWidthImage from "../components/FullWidthImage";
+import Layout from "../components/Layout";
 
 export const IndexPageTemplate = ({
   image,
