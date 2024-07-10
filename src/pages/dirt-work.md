@@ -3,10 +3,10 @@ templateKey: general-page
 title: 'Dirt Working'
 order: 6
 image: /img/dirt_work.jpeg
+icon: 'dirtworking'
 featuredpost: true
 description: >-
-  We’re proud to announce that we’ll be offering a small batch of Jamaica Blue
-  Mountain coffee beans in our store next week.
+  From excavation to grading, our dirt work services are tailored to meet your project's needs. Whether you're preparing for construction or landscaping, we have the expertise to get the job done right.
 tags:
   - jamaica
   - green beans

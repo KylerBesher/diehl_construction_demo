@@ -4,7 +4,6 @@ import { Link } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import ReactHtmlParser from "react-html-parser";
 
-
 export default function FullWidthImage(props) {
   const {
     height = '75vh',
@@ -13,7 +12,20 @@ export default function FullWidthImage(props) {
     title,
     subheading,
     imgPosition = "center center",
+    boxAlign = "right", // Add new prop for box alignment
   } = props;
+
+  const boxContentStyle = {
+    width: "calc(50% - 40px)",
+    position: "absolute",
+    top: "40px",
+    bottom: "40px",
+    color: "#fff",
+    backgroundColor: "rgba(0, 0, 0, 0.6)",
+    padding: "40px 40px",
+    borderRadius: "5px",
+    ...(boxAlign === "left" ? { left: "40px" } : { right: "40px" }), // Conditionally set left or right
+  };
 
   return (
     <React.Fragment>
@@ -44,25 +56,16 @@ export default function FullWidthImage(props) {
         {(title || subheading) && (
           <div
             className="box-content"
-            style={{
-              gridArea: "1/1",
-              position: "absolute",
-              top: "40px",
-              bottom: "40px",
-              color: "#fff",
-              backgroundColor: "rgba(0, 0, 0, 0.6)",
-              padding: "40px 40px",
-              borderRadius: "5px",
-            }}
-          ><div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              height: "100%",
-
-            }}
+            style={boxContentStyle}
           >
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                height: "100%",
+              }}
+            >
               {title && (
                 <h1
                   className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen has-span-inside"
@@ -90,27 +93,17 @@ export default function FullWidthImage(props) {
                 <Link className="btn has-background-primary" to="/contact">
                   Get a Free Estimate
                 </Link>
-
               </div>
             </div>
           </div>
         )}
       </div>
       <style jsx>{`
-        @media (min-width: 1024px) {
-          .box-content {
-            width: calc(50% - 40px);
-            left: 0;
-            right: auto;
-            margin-left: 40px;
-          }
-        }
-
         @media (max-width: 1023px) {
           .box-content {
             width: calc(100% - 80px);
-            left: 40px;
-            right: 40px;
+            left: ${boxAlign === "left" ? "40px" : "auto"};
+            right: ${boxAlign === "right" ? "40px" : "auto"};
           }
         }
       `}</style>
@@ -123,4 +116,5 @@ FullWidthImage.propTypes = {
   title: PropTypes.string,
   height: PropTypes.string,
   subheading: PropTypes.string,
+  boxAlign: PropTypes.string, // Add new prop type
 };

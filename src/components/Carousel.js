@@ -10,7 +10,7 @@ const CarouselWrapper = ({ images }) => {
 
   const imageStyle = {
     objectFit: 'cover',
-    height: '750px', // Set this to your desired height
+    height: '300px', // Adjust this height as needed
     width: '100%',
   };
 
@@ -19,19 +19,21 @@ const CarouselWrapper = ({ images }) => {
       <Carousel
         showThumbs={false}
         showStatus={false}
+        showIndicators={false}
         autoPlay
         infiniteLoop
-        dynamicHeight={false}
-        swipeable={true}
-        useKeyboardArrows={true}
+        swipeable
+        useKeyboardArrows
         className="custom-carousel"
+        centerMode
+        centerSlidePercentage={33.33} // Adjust to show 3 images at a time
         onClickItem={(index) => {
           setPhotoIndex(index);
           setIsOpen(true);
         }}
       >
         {images.map((image, index) => (
-          <div key={index}>
+          <div key={index} className="carousel-image-container">
             <img src={image.publicURL} alt={image.name} style={imageStyle} />
             {image.caption && <p className="legend">{image.caption}</p>}
           </div>
@@ -52,6 +54,27 @@ const CarouselWrapper = ({ images }) => {
           }
         />
       )}
+
+      <style jsx>{`
+        .custom-carousel .carousel .slide {
+          background: none;
+        }
+        .carousel-image-container {
+          padding: 0 5px; /* Adjust spacing between images */
+        }
+        .custom-carousel .carousel .thumbs-wrapper {
+          margin: 0;
+        }
+        .custom-carousel .carousel .control-dots .dot {
+          background: #f79c42;
+        }
+        .legend {
+          background: rgba(0, 0, 0, 0.5);
+          color: #fff;
+          padding: 10px;
+          font-size: 14px;
+        }
+      `}</style>
     </>
   );
 };

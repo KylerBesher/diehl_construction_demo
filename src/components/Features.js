@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Link } from "gatsby";
 import PropTypes from "prop-types";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import ConstructionIcon from '@mui/icons-material/Construction';
@@ -8,28 +9,25 @@ import WindowIcon from '@mui/icons-material/Window';
 
 const getIcon = (icon, name) => {
   const fontSize = '36px';
-  let iconComponent;
-  switch(icon) {
-    case "foundation":
-      iconComponent = <ConstructionIcon style={{ fontSize: fontSize }} />;
-      break;
-    case "waterproofing":
-      iconComponent = <OpacityIcon style={{ fontSize: fontSize }} />;
-      break;
-    case "dirtworking":
-      iconComponent = <LandscapeIcon style={{ fontSize: fontSize }} />;
-      break;
-    case "windows":
-      iconComponent = <WindowIcon style={{ fontSize: fontSize }} />;
-      break;
-    default:
-      iconComponent = <ConstructionIcon style={{ fontSize: fontSize }} />;
-  }
-  return <div>
-    {iconComponent}
-    <h2 className="has-text-primary" style={{ margin: "10px 0 0 0", fontSize: fontSize }}>{name}</h2>
-  </div>
-}
+
+  const iconMap = {
+    foundation: ConstructionIcon,
+    waterproofing: OpacityIcon,
+    dirtworking: LandscapeIcon,
+    windows: WindowIcon,
+  };
+
+  const IconComponent = iconMap[icon] || ConstructionIcon;
+
+  return (
+    <div>
+      <IconComponent style={{ fontSize: '48px' }} />
+      <h2 className="has-text-primary" style={{ margin: "10px 0 0 0", fontSize, fontWeight: 'bold' }}>
+        {name}
+      </h2>
+    </div>
+  );
+};
 
 const FeatureGrid = ({ gridItems }) => (
   <div className="columns is-multiline" style={{ margin: '0px' }}>
@@ -43,7 +41,7 @@ const FeatureGrid = ({ gridItems }) => (
         borderRadius: "0px",
       };
 
-      const { alt = "", childImageSharp, image, text, icon, name } = item;
+      const { alt = "", childImageSharp, image, text, icon, name, slug } = item;
       const imageData = getImage(childImageSharp || (image && image.childImageSharp));
 
       return (
@@ -66,27 +64,19 @@ const FeatureGrid = ({ gridItems }) => (
                   background: "rgba(0, 0, 0, 0.5)",
                   padding: "20px",
                   borderRadius: "10px",
+                  width: "80%",
                 }}
+                className="overlay"
               >
                 <div>
                   {getIcon(icon, name)}
                 </div>
                 <h2 style={{ margin: "10px 0 0 0" }}>{text}</h2>
-                <p style={{ margin: "5px 0 0 0" }}>{alt}</p>
-                <button
-                  style={{
-                    marginTop: "10px",
-                    padding: "10px 20px",
-                    backgroundColor: "#FFA500",
-                    color: "#fff",
-                    border: "none",
-                    borderRadius: "5px",
-                    cursor: "pointer",
-                    fontSize: "16px",
-                  }}
-                >
+
+                <p style={{ margin: "2em 0 2em 0" }}>{alt}</p>
+                <Link className="btn has-background-primary" to={slug} >
                   LEARN MORE
-                </button>
+                </Link>
               </div>
             </section>
           </div>

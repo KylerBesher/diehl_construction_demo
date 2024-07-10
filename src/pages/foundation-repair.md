@@ -4,12 +4,13 @@ title: Foundation Repair
 order: 0
 image: /img/foundation_repair.jpeg
 date: 2017-01-04T15:04:10.000Z
+icon: 'foundation'
 featuredpost: false
 featuredimage: /img/chemex.jpg
-description: Brewing with a Chemex probably seems like a complicated, time-consuming ordeal, but once you get used to the process, it becomes a soothing ritual that's worth the effort every time.
-tags:
-  - brewing
-  - chemex
+description: We provide comprehensive foundation repair services to ensure your home's stability and safety. Contact us for a consultation and learn how we can help protect your investment.
+# tags:
+#   - brewing
+#   - chemex
 ---
 ![chemex](/img/chemex.jpg)
 

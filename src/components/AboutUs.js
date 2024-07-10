@@ -1,98 +1,71 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 export default function AboutUs(props) {
   const {
+    img,
     title,
     subheading,
     mainText,
-    buttonText = "Learn More",
-    buttonLink = "#",
+    imgPosition = "left center", // Change default position to left center
   } = props;
+
+  const image = getImage(img) || img;
 
   return (
     <React.Fragment>
-      <div className="about-us-container">
-        <div className="main-content">
-          {mainText && (
-            <p className="main-text">
-              {mainText}
-            </p>
+      <div className="columns is-vcentered" style={{ marginTop: '6px', marginBottom: '3px' }}>
+        <div className="column is-half" style={{ padding: 0, display: 'flex', alignItems: 'stretch' }}>
+          {!img?.url ? (
+            <GatsbyImage
+              image={image}
+              style={{ height: '100%', width: '100%', objectFit: 'cover', objectPosition: 'left center' }} // Set objectPosition to left center
+              objectPosition={imgPosition}
+              layout="fullWidth"
+              aspectratio={2 / 1}
+              alt=""
+              formats={["auto", "webp", "avif"]}
+            />
+          ) : (
+            <div
+              style={{
+                backgroundImage: `url(${img.url})`,
+                backgroundPosition: 'left center', // Set backgroundPosition to left center
+                backgroundSize: "cover",
+                height: '100%',
+                width: '100%',
+              }}
+            ></div>
           )}
-          <a href={buttonLink} className="learn-more-button">
-            {buttonText}
-          </a>
         </div>
-        <div className="about-us-content">
-          {title && (
-            <h2 className="about-title">
-              {title}
-            </h2>
-          )}
-          {subheading && (
-            <p className="about-subheading">
-              {subheading}
-            </p>
-          )}
+        <div className="column is-half has-text-left is-flex is-align-items-center" style={{ padding: '0px' }}>
+          <div className="content" style={{ width: '100%', padding: '40px', display: 'flex', flexDirection: 'column', justifyContent: 'center', height: '100%' }}>
+            {title && (
+              <h1 className="title is-1 has-text-weight-bold has-text-primary" style={{ marginBottom: '20px' }}>
+                {title}
+              </h1>
+            )}
+            {subheading && (
+              <p className="subtitle is-5 has-text-grey-dark" style={{ marginBottom: '20px' }}>
+                {subheading}
+              </p>
+            )}
+            {mainText && (
+              <p className="is-size-5 has-text-grey">
+                {mainText}
+              </p>
+            )}
+          </div>
         </div>
       </div>
       <style jsx>{`
-        .about-us-container {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          height: 50vh;
-          color: #4A4A4A;
+        .columns.is-vcentered {
+          align-items: stretch;
         }
-        .main-content {
-          background-color: #07407B;
-          padding: 40px;
+        .column.is-half {
           display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: flex-start;
-          color: #fff;
-        }
-        .main-text {
-          font-size: 2rem;
-          font-weight: bold;
-          margin-bottom: 20px;
-        }
-        .learn-more-button {
-          display: inline-block;
-          padding: 10px 20px;
-          color: #fff;
-          background-color: transparent;
-          border: 2px solid #f79c42;
-          border-radius: 5px;
-          text-decoration: none;
-          font-weight: bold;
-        }
-        .about-us-content {
-          padding: 40px;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-        }
-        .about-title {
-          font-size: 2rem;
-          font-weight: bold;
-          margin-bottom: 20px;
-        }
-        .about-subheading {
-          font-size: 1.25rem;
-          font-weight: normal;
-        }
-        @media (max-width: 768px) {
-          .about-us-container {
-            grid-template-columns: 1fr;
-          }
-          .main-content {
-            align-items: center;
-            text-align: center;
-          }
-          .about-us-content {
-            text-align: center;
-          }
+          align-items: stretch;
         }
       `}</style>
     </React.Fragment>
@@ -100,9 +73,9 @@ export default function AboutUs(props) {
 }
 
 AboutUs.propTypes = {
+  img: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   subheading: PropTypes.string,
   mainText: PropTypes.string,
-  buttonText: PropTypes.string,
-  buttonLink: PropTypes.string,
+  imgPosition: PropTypes.string,
 };

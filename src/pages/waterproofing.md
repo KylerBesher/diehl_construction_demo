@@ -4,8 +4,9 @@ title: Waterproofing
 order: 3
 image: /img/waterproofing.jpeg
 featuredpost: false
+icon: 'waterproofing'
 featuredimage: /img/flavor_wheel.jpg
-description: The Coffee Taster’s Flavor Wheel, the official resource used by coffee tasters, has been revised for the first time this year.
+description: Our expert waterproofing solutions safeguard your property from water damage. Discover our range of services designed to keep your home dry and secure. Reach out to us to learn more.
 tags:
   - flavor
   - tasting

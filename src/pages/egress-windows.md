@@ -4,8 +4,9 @@ title: Egress Windows
 order: 9
 image: /img/egress_windows.jpeg
 featuredpost: false
+icon: 'windows'
 featuredimage: /img/chemex.jpg
-description: Brewing with a Chemex probably seems like a complicated, time-consuming ordeal, but once you get used to the process, it becomes a soothing ritual that's worth the effort every time.
+description: Enhance safety and natural light in your basement with our professional egress window installation services. Get in touch with us to explore your options and improve your home's livability.
 tags:
   - brewing
   - chemex

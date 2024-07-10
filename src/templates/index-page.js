@@ -8,6 +8,7 @@ import CarouselWrapper from "../components/Carousel";
 import Features from "../components/Features";
 import FullWidthImage from "../components/FullWidthImage";
 import Layout from "../components/Layout";
+import Testimonials from "../components/Testimonials";
 
 export const IndexPageTemplate = ({
   image,
@@ -18,6 +19,8 @@ export const IndexPageTemplate = ({
   description,
   intro,
   images,
+  blurbs,
+  testimonials
 }) => {
   const heroImage = getImage(image) || image;
   const aboutImage = getImage(mainpitch.image) || mainpitch.image;
@@ -25,27 +28,9 @@ export const IndexPageTemplate = ({
     <div>
       <FullWidthImage img={heroImage} title={heading} subheading={subheading} />
       <AboutUs img={aboutImage} title={mainpitch.title} subheading={mainpitch.description} />
-      <Features gridItems={intro.blurbs} />
+      <Features gridItems={blurbs} />
+      <Testimonials testimonials={testimonials} />
       <CarouselWrapper images={images} />
-      {/* <section className="section section--gradient">
-        <div className="container">
-          <div className="section">
-            <div className="columns">
-              <div className="column is-10 is-offset-1">
-                <div className="content">
-                  <div className="columns">
-                    <div className="column is-12">
-                      <h3 className="has-text-weight-semibold is-size-2">
-                        Gallery
-                      </h3>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
     </div>
   );
 };
@@ -57,6 +42,7 @@ IndexPageTemplate.propTypes = {
   subheading: PropTypes.string,
   mainpitch: PropTypes.object,
   description: PropTypes.string,
+  testimonials: PropTypes.array,
   intro: PropTypes.shape({
     blurbs: PropTypes.array,
   }),
@@ -66,6 +52,12 @@ IndexPageTemplate.propTypes = {
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
   const images = data.allFile.edges.map(edge => edge.node);
+  const blurbs = data.allMarkdownRemark.edges.map(edge => ({
+    slug: edge.node.fields.slug,
+    text: edge.node.frontmatter.description,
+    name: edge.node.frontmatter.title,
+    ...edge.node.frontmatter
+  }));
 
   return (
     <Layout>
@@ -78,6 +70,8 @@ const IndexPage = ({ data }) => {
         description={frontmatter.description}
         intro={frontmatter.intro}
         images={images}
+        blurbs={blurbs}
+        testimonials={frontmatter.testimonials}
       />
     </Layout>
   );
@@ -116,6 +110,10 @@ export const pageQuery = graphql`
         }
         heading
         subheading
+        testimonials{
+          name
+          quote
+        }
         mainpitch {
           title
           image {
@@ -126,22 +124,32 @@ export const pageQuery = graphql`
           description
         }
         description
-        intro {
-          blurbs {
-            image {
-              childImageSharp {
-                gatsbyImageData(width: 240, quality: 64, layout: CONSTRAINED)
-              }
-            }
-            icon
-            name
-            text
-          }
-          heading
-          description
-        }
       }
     }
+    allMarkdownRemark(
+          sort: { order: ASC, fields: [frontmatter___order, frontmatter___title] }
+          filter: { frontmatter: { templateKey: { eq: "general-page" } } }
+        ) {
+          edges {
+            node {
+              id
+              frontmatter {
+                title
+                order
+                description
+                image{
+                  childImageSharp {
+                    gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+                  }
+                }
+                icon
+              }
+              fields {
+                slug
+              }
+            }
+          }
+        }
     allFile(filter: { relativeDirectory: { eq: "gallery" } }) {
       edges {
         node {
