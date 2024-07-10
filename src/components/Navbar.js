@@ -7,7 +7,7 @@ import { Facebook as FacebookIcon, Settings as SettingsIcon, AccountCircle as Ac
 
 
 import logo from "../img/diehl_logo.png";
-const height = '60px';
+const height = '80px';
 const Navbar = () => {
   const [isActive, setIsActive] = useState(false);
 
@@ -45,7 +45,7 @@ const Navbar = () => {
                 re-write that makes this unneccesary.
              */}
             <li className="navbar-item" style={{ padding: "0px" }}>
-              <Link className="navbar-item" to="/about">
+              <Link className="navbar-item" to="/foundation-repair">
                 Basement & Foundation Repair
               </Link>
             </li>

@@ -2,10 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
+import ReactHtmlParser from "react-html-parser";
+
 
 export default function FullWidthImage(props) {
   const {
     height = '75vh',
+    minHeight = '600px',
     img,
     title,
     subheading,
@@ -25,13 +28,13 @@ export default function FullWidthImage(props) {
         {img?.url ? (
           <img
             src={img}
-            style={{ gridArea: "1/1", height: height, width: "100%", objectFit: "cover", objectPosition: imgPosition }}
+            style={{ gridArea: "1/1", height: height, minHeight: minHeight, width: "100%", objectFit: "cover", objectPosition: imgPosition }}
             alt=""
           />
         ) : (
           <GatsbyImage
             image={img}
-            style={{ gridArea: "1/1", height: height, width: "100%", objectFit: "cover", objectPosition: imgPosition }}
+            style={{ gridArea: "1/1", height: height, minHeight: minHeight, width: "100%", objectFit: "cover", objectPosition: imgPosition }}
             layout="fullWidth"
             aspectratio={3 / 1}
             alt=""
@@ -48,26 +51,26 @@ export default function FullWidthImage(props) {
               bottom: "40px",
               color: "#fff",
               backgroundColor: "rgba(0, 0, 0, 0.6)",
-              padding: "10px 20px",
+              padding: "40px 40px",
               borderRadius: "5px",
             }}
           ><div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            height: "100%",
-          
-          }}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              height: "100%",
+
+            }}
           >
               {title && (
                 <h1
-                  className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
+                  className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen has-span-inside"
                   style={{
                     textShadow: "2px 2px 4px rgba(0, 0, 0, 0.6)",
                   }}
                 >
-                  {title}
+                  {ReactHtmlParser(title)}
                 </h1>
               )}
               <hr />
@@ -84,10 +87,10 @@ export default function FullWidthImage(props) {
                 </h3>
               )}
               <div style={{ marginTop: "1em" }}>
-              <Link className="btn has-background-primary" to="/contact">
-              Get a Free Estimate
-              </Link>
-               
+                <Link className="btn has-background-primary" to="/contact">
+                  Get a Free Estimate
+                </Link>
+
               </div>
             </div>
           </div>

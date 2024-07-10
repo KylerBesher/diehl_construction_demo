@@ -10,7 +10,7 @@ const CarouselWrapper = ({ images }) => {
 
   const imageStyle = {
     objectFit: 'cover',
-    height: '500px', // Set this to your desired height
+    height: '750px', // Set this to your desired height
     width: '100%',
   };
 

@@ -24,9 +24,11 @@ export const IndexPageTemplate = ({
   const aboutImage = getImage(mainpitch.image) || mainpitch.image;
   return (
     <div>
-      <FullWidthImage img={heroImage} title={heading  } subheading={subheading} />
+      <FullWidthImage img={heroImage} title={heading} subheading={subheading} />
       <AboutUs img={aboutImage} title={mainpitch.title} subheading={mainpitch.description} />
-      <section className="section section--gradient">
+      <Features gridItems={intro.blurbs} />
+      <CarouselWrapper images={images} />
+      {/* <section className="section section--gradient">
         <div className="container">
           <div className="section">
             <div className="columns">
@@ -35,27 +37,16 @@ export const IndexPageTemplate = ({
                   <div className="columns">
                     <div className="column is-12">
                       <h3 className="has-text-weight-semibold is-size-2">
-                        {heading}
-                      </h3>
-                      <p>{description}</p>
-                    </div>
-                  </div>
-                  
-                  <Features gridItems={intro.blurbs} />
-                  <div className="columns">
-                    <div className="column is-12">
-                      <h3 className="has-text-weight-semibold is-size-2">
                         Gallery
                       </h3>
                     </div>
                   </div>
-                  <CarouselWrapper images={images} />
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };
@@ -143,6 +134,8 @@ export const pageQuery = graphql`
                 gatsbyImageData(width: 240, quality: 64, layout: CONSTRAINED)
               }
             }
+            icon
+            name
             text
           }
           heading

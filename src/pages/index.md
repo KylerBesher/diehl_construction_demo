@@ -13,36 +13,33 @@ mainpitch:
   title: About Us
   image: /img/team.png
   description: >
-    Diehl Construction is a family-owned and operated business, deeply committed to our local communities in Salina, Abilene, Lindsborg, and Concordia. Beginning business in 1975, we have dedicated nearly 50 years to serving our neighbors with expert foundation repair and waterproofing services. Our focus is on providing lasting, high-quality solutions that meet your needs. We take genuine pride in our work, ensuring every job is done right. For us, it's not just about completing a project, it's about building trust and satisfaction within our community. Your peace of mind and satisfaction are our top priorities.
+    Diehl Construction is a family-owned and operated business, deeply committed to our local communities in Salina, Abilene, Lindsborg, and Concordia. Starting in 1975, we have dedicated nearly 50 years to serving our neighbors with expert foundation repair and waterproofing services. Our focus is on providing lasting, high-quality solutions that meet your needs. We take genuine pride in our work, ensuring every job is done right. 
+    At Diehl Construction, we don’t just aim to complete a project; we strive to exceed your expectations and build lasting relationships. Our dedication to quality, integrity, and customer satisfaction sets us apart as Kansas’ premier foundation repair and waterproofing company.
+
+
 intro:
   blurbs:
     - image: /img/foundation_repair.jpeg
+      icon: 'foundation'
+      name: 'Foundation Repair'
       text: >
-        We sell green and roasted coffee beans that are sourced directly from
-        independent farmers and farm cooperatives. We’re proud to offer a
-        variety of coffee beans grown with great care for the environment and
-        local communities. Check our post or contact us directly for current
-        availability.
+        We provide comprehensive foundation repair services using advanced techniques to ensure your home's stability and safety. Contact us for a consultation and learn how we can help protect your investment.
     - image: /img/waterproofing.jpeg
+      icon: 'waterproofing'
+      name: 'Waterproofing'
       text: >
-        We offer a small, but carefully curated selection of brewing gear and
-        tools for every taste and experience level. No matter if you roast your
-        own beans or just bought your first french press, you’ll find a gadget
-        to fall in love with in our shop.
+        Our expert waterproofing solutions safeguard your property from water damage. Discover our range of services designed to keep your home dry and secure. Reach out to us to learn more.
     - image: /img/dirt_work.jpeg
+      icon: 'dirtworking'
+      name: 'Dirt Work'
       text: >
-        Love a great cup of coffee, but never knew how to make one? Bought a
-        fancy new Chemex but have no clue how to use it? Don't worry, we’re here
-        to help. You can schedule a custom 1-on-1 consultation with our baristas
-        to learn anything you want to know about coffee roasting and brewing.
-        Email us or call the store for details.
+        From excavation to grading, our dirt work services are tailored to meet your project's needs. Whether you're preparing for construction or landscaping, we have the expertise to get the job done right.
     - image: /img/egress_windows.jpeg
+      icon: 'windows'
+      name: 'Egress Windows'
       text: >
-        We believe that good coffee has the power to bring people together.
-        That’s why we decided to turn a corner of our shop into a cozy meeting
-        space where you can hang out with fellow coffee lovers and learn about
-        coffee making techniques. All of the artwork on display there is for
-        sale. The full price you pay goes to the artist.
+        Enhance safety and natural light in your basement with our professional egress window installation services. Get in touch with us to explore your options and improve your home's livability.
+
   heading: What we offer
   description: >
     Kaldi is the ultimate spot for coffee lovers who want to learn about their

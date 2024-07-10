@@ -1,114 +1,81 @@
-import * as React from "react";
+import React from "react";
 import { Link } from "gatsby";
-
+import { Facebook as FacebookIcon } from '@mui/icons-material';
 import logo from "../img/diehl_logo.png";
-import facebook from "../img/social/facebook.svg";
-import instagram from "../img/social/instagram.svg";
-import twitter from "../img/social/twitter.svg";
-import vimeo from "../img/social/vimeo.svg";
 
 const Footer = () => {
-  
-    return (
-      <footer className="footer has-background-black has-text-white-ter">
-        <div className="content has-text-centered">
-          <img
-            src={logo}
-            alt="Kaldi"
-            style={{ width: "14em", height: "10em" }}
-          />
-        </div>
-        <div className="content has-text-centered has-background-black has-text-white-ter">
-          <div className="container has-background-black has-text-white-ter">
-            <div style={{ maxWidth: "100vw" }} className="columns">
-              <div className="column is-4">
-                <section className="menu">
-                  <ul className="menu-list">
-                    <li>
-                      <Link to="/" className="navbar-item">
-                        Home
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/about">
-                        About
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/products">
-                        Products
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/contact/examples">
-                        Form Examples
-                      </Link>
-                    </li>
-                    <li>
-                      <a
-                        className="navbar-item"
-                        href="/admin/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Admin
-                      </a>
-                    </li>
-                  </ul>
-                </section>
-              </div>
-              <div className="column is-4">
-                <section>
-                  <ul className="menu-list">
-                    <li>
-                      <Link className="navbar-item" to="/blog">
-                        Latest Stories
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/contact">
-                        Contact
-                      </Link>
-                    </li>
-                  </ul>
-                </section>
-              </div>
-              <div className="column is-4 social">
-                <a title="facebook" href="https://facebook.com">
-                  <img
-                    src={facebook}
-                    alt="Facebook"
-                    style={{ width: "1em", height: "1em" }}
-                  />
-                </a>
-                <a title="twitter" href="https://twitter.com">
-                  <img
-                    className="fas fa-lg"
-                    src={twitter}
-                    alt="Twitter"
-                    style={{ width: "1em", height: "1em" }}
-                  />
-                </a>
-                <a title="instagram" href="https://instagram.com">
-                  <img
-                    src={instagram}
-                    alt="Instagram"
-                    style={{ width: "1em", height: "1em" }}
-                  />
-                </a>
-                <a title="vimeo" href="https://vimeo.com">
-                  <img
-                    src={vimeo}
-                    alt="Vimeo"
-                    style={{ width: "1em", height: "1em" }}
-                  />
-                </a>
-              </div>
+  return (
+    <footer className="footer has-background-white has-text-black-ter">
+      <div className="content has-text-centered has-text-black">
+        <img
+          src={logo}
+          alt="Diehl Construction"
+          style={{ width: "14em" }}
+        />
+      </div>
+      <div className="content has-background-white has-text-black-ter">
+        <div className="container has-background-white has-text-black-ter">
+          <div className="columns is-centered">
+            <div className="column is-half has-text-centered">
+              <section className="menu">
+                <ul className="menu-list">
+                  <li>
+                    <Link className="navbar-item has-text-black" to="/privacy-policy">
+                      Privacy Policy
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="navbar-item has-text-black" to="/terms-of-use">
+                      Terms of Use
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="navbar-item has-text-black" to="/cookie-policy">
+                      Cookie Policy
+                    </Link>
+                  </li>
+                </ul>
+              </section>
+            </div>
+            <div className="column is-half has-text-centered">
+              <section className="menu">
+                <ul className="menu-list">
+                  <li>
+                    <a
+                      className="navbar-item has-text-black"
+                      href="https://www.facebook.com/basementrepair"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <span className="icon">
+                        <FacebookIcon color="primary" />
+                      </span>
+                      &nbsp;Follow us on Facebook
+                    </a>
+                  </li>
+                  <li>
+                    <span className="navbar-item has-text-black">
+                      Call us: (555) 123-4567
+                    </span>
+                  </li>
+                  <li>
+                    <span className="navbar-item has-text-black">
+                      Email: info@diehlconstruction.com
+                    </span>
+                  </li>
+                  <li>
+                    <span className="navbar-item has-text-black">
+                      Address: 123 Main St, Salina, KS 67401
+                    </span>
+                  </li>
+                </ul>
+              </section>
             </div>
           </div>
         </div>
-      </footer>
-    );
+      </div>
+    </footer>
+  );
 };
 
 export default Footer;
