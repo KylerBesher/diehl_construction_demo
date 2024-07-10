@@ -1,18 +1,19 @@
 ---
 templateKey: index-page
 title: Diehl Construction
-heading: Diehl Construction
-subheading: Strength Beneath Your Feet, Protection Above All
-image: /img/gallery/dirt-work-img.jpg
+heading: >
+  Foundation Repair <span>You Can Trust</span>
+subheading: With nearly 50 years of experience, Diehl Construction specializes in foundation repair and waterproofing. We deliver lasting solutions for homes and businesses, ensuring your structures remain strong and secure. Experience the craftsmanship and integrity of a family-owned business dedicated to quality and customer satisfaction. Choose Diehl Construction for reliable service and peace of mind.
+description: >-
+  asdfadsf
+  
+
+image: /img/dirt_work.jpeg
 mainpitch:
   title: About Us
+  image: /img/team.png
   description: >
     Diehl Construction is a family-owned and operated business, deeply committed to our local communities in Salina, Abilene, Lindsborg, and Concordia. Beginning business in 1975, we have dedicated nearly 50 years to serving our neighbors with expert foundation repair and waterproofing services. Our focus is on providing lasting, high-quality solutions that meet your needs. We take genuine pride in our work, ensuring every job is done right. For us, it's not just about completing a project, it's about building trust and satisfaction within our community. Your peace of mind and satisfaction are our top priorities.
-description: >-
-  Kaldi is the ultimate spot for coffee lovers who want to learn about their
-  java’s origin and support the farmers that grew it. We take coffee production,
-  roasting and brewing seriously and we’re glad to pass that knowledge to
-  anyone.
 intro:
   blurbs:
     - image: /img/foundation_repair.jpeg

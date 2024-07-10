@@ -8,6 +8,7 @@ import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
 import CarouselWrapper from "../components/Carousel";
 import FullWidthImage from "../components/FullWidthImage";
+import AboutUs from "../components/AboutUs";
 
 export const IndexPageTemplate = ({
   image,
@@ -20,24 +21,17 @@ export const IndexPageTemplate = ({
   images,
 }) => {
   const heroImage = getImage(image) || image;
-
+  const aboutImage = getImage(mainpitch.image) || mainpitch.image;
   return (
     <div>
-      <FullWidthImage img={heroImage} title={title} subheading={subheading} />
+      <FullWidthImage img={heroImage} title={heading  } subheading={subheading} />
+      <AboutUs img={aboutImage} title={mainpitch.title} subheading={mainpitch.description} />
       <section className="section section--gradient">
         <div className="container">
           <div className="section">
             <div className="columns">
               <div className="column is-10 is-offset-1">
                 <div className="content">
-                  <div className="content">
-                    <div className="tile">
-                      <h1 className="title">{mainpitch.title}</h1>
-                    </div>
-                    <div className="tile">
-                      <h3 className="subtitle">{mainpitch.description}</h3>
-                    </div>
-                  </div>
                   <div className="columns">
                     <div className="column is-12">
                       <h3 className="has-text-weight-semibold is-size-2">
@@ -134,6 +128,11 @@ export const pageQuery = graphql`
         subheading
         mainpitch {
           title
+          image {
+          childImageSharp {
+            gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+          }
+        }
           description
         }
         description
