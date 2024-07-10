@@ -1,13 +1,35 @@
 import React, { useState } from "react";
-import { Link, StaticQuery, graphql } from "gatsby";
+import { Link, graphql, useStaticQuery } from "gatsby";
 import { Facebook as FacebookIcon } from '@mui/icons-material';
 import logo from "../img/diehl_logo.png";
 
 const height = '80px';
 
-const NavbarTemplate = ({ data }) => {
+const Navbar = () => {
   const [isActive, setIsActive] = useState(false);
-  const pages = data?.allMarkdownRemark?.edges || [];
+
+  const data = useStaticQuery(graphql`
+    query PagesQuery {
+      allMarkdownRemark(
+        sort: { order: ASC, fields: [frontmatter___title] }
+        filter: { frontmatter: { templateKey: { eq: "general-page" } } }
+      ) {
+        edges {
+          node {
+            id
+            frontmatter {
+              title
+            }
+            fields {
+              slug
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  const pages = data.allMarkdownRemark.edges;
 
   return (
     <>
@@ -43,9 +65,6 @@ const NavbarTemplate = ({ data }) => {
                 </Link>
               </li>
             ))}
-            {/* <Link className="navbar-item" to="/contact">
-                  Contact
-                </Link> */}
             <li className="navbar-end has-text-centered">
               <a
                 className="navbar-item"
@@ -66,30 +85,4 @@ const NavbarTemplate = ({ data }) => {
   );
 };
 
-export default function Navbar() {
-  return (
-    <StaticQuery
-      query={graphql`
-        query PagesQuery {
-          allMarkdownRemark(
-            sort: { order: ASC, fields: [frontmatter___title] }
-            filter: { frontmatter: { templateKey: { eq: "general-page" } } }
-          ) {
-            edges {
-              node {
-                id
-                frontmatter {
-                  title
-                }
-                fields {
-                  slug
-                }
-              }
-            }
-          }
-        }
-      `}
-      render={(data) => <NavbarTemplate data={data} />}
-    />
-  );
-}
+export default Navbar;
