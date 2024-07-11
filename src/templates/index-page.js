@@ -10,7 +10,7 @@ import FullWidthImage from "../components/FullWidthImage";
 import Layout from "../components/Layout";
 import Testimonials from "../components/Testimonials";
 
-export const IndexPageTemplate = ({
+const IndexPageTemplate = ({
   image,
   title,
   heading,

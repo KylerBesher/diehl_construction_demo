@@ -2,37 +2,13 @@ import EmailIcon from "@material-ui/icons/Email";
 import FacebookIcon from '@material-ui/icons/Facebook';
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import PhoneIcon from "@material-ui/icons/Phone";
-import { graphql, useStaticQuery, Link } from "gatsby";
+import { Link } from "gatsby";
 import React from "react";
 import logo from "../img/diehl_logo_alt.png";
 import ContactForm from "./ContactForm";
 
 
 const Footer = () => {
-  const data = useStaticQuery(graphql`
-    query FooterQuery {
-      allMarkdownRemark(
-        sort: { order: ASC, fields: [frontmatter___order, frontmatter___title] }
-        filter: { frontmatter: { templateKey: { eq: "general-page" } } }
-      ) {
-        edges {
-          node {
-            id
-            frontmatter {
-              title
-              order
-            }
-            fields {
-              slug
-            }
-          }
-        }
-      }
-    }
-  `);
-
-  const pages = data?.allMarkdownRemark?.edges || [];
-
   return (
     <footer id="footer" className="footer has-background-black has-text-white-ter">
       <div className="content has-text-centered">

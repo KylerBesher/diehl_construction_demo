@@ -1,9 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import { Helmet } from "react-helmet";
-import Content, { HTMLContent } from "../components/Content";
 import { marked } from "marked";
+import PropTypes from "prop-types";
+import React from "react";
+import { HTMLContent } from "../components/Content";
 
 export default function AboutUs(props) {
   const {

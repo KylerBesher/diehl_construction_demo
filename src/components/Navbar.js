@@ -1,10 +1,9 @@
-import React, { useState } from "react";
-import { Link, useStaticQuery, graphql } from "gatsby";
 import PhoneIcon from '@mui/icons-material/Phone';
-import EmailIcon from '@mui/icons-material/Email';
+import { Link, graphql, useStaticQuery } from "gatsby";
+import React, { useState } from "react";
+import ReactHtmlParser from "react-html-parser";
 import logoAlt from "../img/diehl_logo_alt.png";
 import ScrollLink from "./ScrollToFooter";
-import ReactHtmlParser from "react-html-parser";
 
 export default function Header() {
   const data = useStaticQuery(graphql`

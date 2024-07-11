@@ -1,7 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Link } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
+import PropTypes from "prop-types";
+import React from "react";
 import ReactHtmlParser from "react-html-parser";
 import ScrollLink from "./ScrollToFooter";
 
