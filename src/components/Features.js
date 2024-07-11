@@ -6,6 +6,7 @@ import ConstructionIcon from '@mui/icons-material/Construction';
 import OpacityIcon from '@mui/icons-material/Opacity';
 import LandscapeIcon from '@mui/icons-material/Landscape';
 import WindowIcon from '@mui/icons-material/Window';
+import ReactHtmlParser from "react-html-parser";
 
 const getIcon = (icon, name) => {
   const fontSize = '36px';
@@ -23,7 +24,7 @@ const getIcon = (icon, name) => {
     <div>
       <IconComponent style={{ fontSize: '48px' }} />
       <h2 className="has-text-primary" style={{ margin: "10px 0 0 0", fontSize, fontWeight: 'bold' }}>
-        {name}
+        {ReactHtmlParser(name)}
       </h2>
     </div>
   );
