@@ -22,7 +22,7 @@ const CarouselWrapper = ({ images }) => {
         showIndicators={false}
         autoPlay
         infiniteLoop
-        swipeable
+        swipeable={false}
         interval={10000}
         useKeyboardArrows
         className="custom-carousel"

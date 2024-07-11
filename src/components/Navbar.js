@@ -69,25 +69,17 @@ export default function Header() {
               </li>
             ))}
             <li key={'contact'} className="navbar-custom" style={{ padding: "0px" }}>
-              <ScrollLink classes="navbar-custom" targetId="footer">
+              <ScrollLink classes="navbar-custom" targetId="contact-us" callback={() => { if(isActive) setIsActive(!isActive) }}>
                 Contact
               </ScrollLink>
             </li>
 
             <li className="navbar-end has-text-centered">
-              <a className="navbar-custom   " href="tel:+17858273804">
+              <a className="navbar-custom pointer  " href="tel:+17858273804">
                 <span className="icon">
                   <PhoneIcon />
                 </span>
-                <span style={{ marginLeft: '5px' }}>Call us</span>
-              </a>
-            </li>
-            <li className="navbar-custom has-text-centered">
-              <a className="navbar-custom   " href="mailto:diehlconstructionks@gmail.com">
-                <span className="icon">
-                  <EmailIcon />
-                </span>
-                <span style={{ marginLeft: '5px' }}>Email us</span>
+                <span style={{ marginLeft: '5px' }}>(785) 827-3804</span>
               </a>
             </li>
           </ul>

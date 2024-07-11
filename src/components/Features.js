@@ -62,9 +62,9 @@ const FeatureGrid = ({ gridItems }) => (
                   transform: "translate(-50%, -50%)",
                   textAlign: "center",
                   color: "#fff",
-                  background: "rgba(0, 0, 0, 0.5)",
+                  background: "rgba(0,0,0, 0.8)",
                   padding: "20px",
-                  borderRadius: "10px",
+                  borderRadius: "7px",
                   width: "80%",
                 }}
                 className="overlay"

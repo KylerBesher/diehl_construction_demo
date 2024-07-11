@@ -4,7 +4,9 @@ title: Diehl Construction
 image: /img/home_image.jpeg
 
 heading: Foundation Repair <span>You Can Trust</span>
-subheading: With nearly 50 years of experience, Diehl Construction specializes in foundation repair, delivering lasting solutions for homes and businesses. Our family-owned and operated business is deeply committed to our local communities in Salina, Abilene, Lindsborg, and Concordia. Since 1975, we have been dedicated to ensuring your structures remain strong and secure with expert foundation repair services. At Diehl Construction, we pride ourselves on quality workmanship, reliability, and customer satisfaction.
+subheading: Since 1975, Diehl Construction has been committed to delivering top-notch services for your property. With fifty years of experience, we offer reliable and lasting solutions for both residential and commercial needs. As a family-owned and operated business, we take great pride in serving our local communities in Salina, Abilene, Lindsborg, and Concordia. Whether it’s foundation repair or other construction services, our dedication to quality workmanship, dependability, and customer satisfaction is at the heart of everything we do.
+
+
 
 mainpitch:
   title: Why Choose Diehl Construction?

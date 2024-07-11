@@ -18,11 +18,11 @@ export default function AboutUs(props) {
 
   return (
     <React.Fragment>
-      <div className="columns is-vcentered" style={{ marginTop: '6px', marginBottom: '3px' }}>
-        <div className="column is-half has-text-left is-flex is-align-items-center" style={{ padding: '0px' }}>
-          <div className="content" style={{ width: '100%', padding: '40px', display: 'flex', flexDirection: 'column', justifyContent: 'center', height: '100%' }}>
+      <div className="columns is-vcentered" style={{ margin: '6px 0' }}>
+        <div className="column is-half has-text-left is-flex is-align-items-center" style={{ padding: '0' }}>
+          <div className="content" style={{ width: '100%', padding: '20px', display: 'flex', flexDirection: 'column', justifyContent: 'center', height: '100%' }}>
             {title && (
-              <h1 className="title is-1 has-text-weight-bold has-text-primary" style={{ marginBottom: '2rem' }}>
+              <h1 className="title is-1 has-text-weight-bold has-text-primary" style={{ marginBottom: '1rem' }}>
                 {title}
               </h1>
             )}
@@ -61,7 +61,6 @@ export default function AboutUs(props) {
             ></div>
           )}
         </div>
-
       </div>
       <style jsx>{`
         .columns.is-vcentered {
@@ -70,6 +69,18 @@ export default function AboutUs(props) {
         .column.is-half {
           display: flex;
           align-items: stretch;
+        }
+        .content {
+          overflow-x: hidden;
+          overflow-y: auto;
+        }
+        @media (max-width: 768px) {
+          .columns {
+            flex-direction: column;
+          }
+          .column.is-half {
+            width: 100%;
+          }
         }
       `}</style>
     </React.Fragment>

@@ -49,11 +49,12 @@ export default function Testimonials({ testimonials }) {
           showThumbs={false}
           showStatus={false}
           showIndicators={false}
-          swipeable={true}
+          swipeable={false}
           autoPlay
           infiniteLoop
           interval={10000}
           showArrows={false}
+          useKeyboardArrows
           centerMode={false}
           centerSlidePercentage={50} // Adjust to show 3 images at a time
           selectedItem={currentTestimonial}
@@ -123,15 +124,16 @@ export default function Testimonials({ testimonials }) {
           margin-top: 10px;
         }
         .button.is-primary {
-          background-color: #f79c42;
+          background-color: $primary;
           border-color: #f79c42;
-          color: #ffffff;
+          color: #000000;
           margin: 0 5px;
         }
         .button.is-primary:hover {
-          background-color: #f89d4b;
           border-color: #f89d4b;
+          color: #ffffff;
         }
+
         .buttons.are-centered {
           display: flex;
           justify-content: center;

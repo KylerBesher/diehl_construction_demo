@@ -2,7 +2,7 @@ import EmailIcon from "@material-ui/icons/Email";
 import FacebookIcon from '@material-ui/icons/Facebook';
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import PhoneIcon from "@material-ui/icons/Phone";
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql, useStaticQuery, Link } from "gatsby";
 import React from "react";
 import logo from "../img/diehl_logo_alt.png";
 import ContactForm from "./ContactForm";
@@ -36,13 +36,15 @@ const Footer = () => {
   return (
     <footer id="footer" className="footer has-background-black has-text-white-ter">
       <div className="content has-text-centered">
-        <img src={logo} alt="Diehl Construction" style={{ width: "14em" }} />
+        <Link to="/" title="Logo">
+          <img src={logo} alt="Diehl Construction" style={{ width: "14em" }} />
+        </Link>
       </div>
       <div className="content has-text-centered has-background-black has-text-white-ter">
         <div className="container has-background-black has-text-white-ter">
           <div style={{ maxWidth: "100vw" }} className="columns">
             <div className="column is-6">
-              <div className="container">
+              <div className="container" id="contact-us">
                 <div className="content">
                   <h2 className="has-text-primary title is-2 ">Get in Touch With Us</h2>
                   <h4 className="has-text-white is-4" style={{ color: 'white' }}>Whether you are looking for an estimate, have a question, or just want to say hello, we would love to hear from you! Fill out the form below and we'll get back to you as soon as we can.</h4>
@@ -54,7 +56,7 @@ const Footer = () => {
             <div className="column is-6">
               <div style={{ padding: "1rem" }}>
                 <h2 className="has-text-primary title is-2 ">Find Us</h2>
-                <div className="contact-info" style={{ textAlign: "left", color: "white", marginBottom: '1rem'}}>
+                <div className="contact-info" style={{ textAlign: "left", color: "white", marginBottom: '1rem' }}>
                   <div className="contact-item" style={{ display: "flex", alignItems: "center", marginBottom: "1rem" }}>
                     <PhoneIcon className="has-text-primary" />
                     <a className="underline-hover" href="tel:+17858273804" style={{ marginLeft: "0.5rem", color: "white" }}>(785) 827-3804</a>

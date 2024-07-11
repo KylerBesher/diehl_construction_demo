@@ -1,9 +1,16 @@
 import React from 'react';
 
-const ScrollLink = ({ targetId, classes, children }) => {
+const ScrollLink = ({ targetId, classes, callback, children }) => {
   const handleClick = (e) => {
     e.preventDefault();
-    document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+    if(callback){
+      callback();
+    }
+    const targetElement = document.getElementById(targetId);
+    const yOffset = -80; // Offset to scroll 80px above the target element
+    const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+    window.scrollTo({ top: y, behavior: 'smooth' });
   };
 
   return (
