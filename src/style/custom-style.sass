@@ -18,7 +18,7 @@
     margin-bottom: 1.5rem
     margin-top: 0
 
-// Helper Classes
+
 .full-width-image-container
   width: 100vw
   height: 400px
@@ -58,14 +58,14 @@
 .margin-top-0
   margin-top: 0 !important
 
-.navbar-item .icon
+.navbar-link .icon
   color: $primary
-// Override for use of svg's from https://simpleicons.org/
+
 .icon svg
   width: 1.5rem
   height: 1.5rem
   fill: currentColor
-.navbar-brand .navbar-item.logo
+.navbar-brand .navbar-link.logo
   padding: 0 1rem
 footer.footer
   padding: 3rem 0rem 0rem
@@ -90,7 +90,7 @@ footer.footer
     vertical-align: middle
     display: inline
 
-// blog roll
+
 .blog-list-item.is-featured
   background-color: #d6400033
 .blog-list-item header
@@ -101,4 +101,33 @@ footer.footer
   margin: 0 1.5em 0 0
 
 .has-span-inside span 
+  color: $primary 
+
+
+.is-active-link
+  position: relative
+  display: inline-block
+  // background-color: $primary 
+  // color:black
+
+.is-active-link::after
+  content: ""
+  position: absolute
+  left: 0
+  bottom: -2px 
+  width: 100%
+  height: 4px 
+  color: black
+  background-color: $primary 
+
+
+.navbar-link
+    color: white
+
+.navbar-link
+  &:hover
+    font-color: $primary 
+    background-color: $primary 
+
+.navbar-burger
   color: $primary 

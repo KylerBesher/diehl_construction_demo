@@ -6,8 +6,8 @@ import ReactHtmlParser from "react-html-parser";
 
 export default function FullWidthImage(props) {
   const {
-    height = '75vh',
-    minHeight = '600px',
+    height = '50vh',
+    minHeight = '800px',
     img,
     title,
     subheading,
@@ -101,9 +101,9 @@ export default function FullWidthImage(props) {
       <style jsx>{`
         @media (max-width: 1023px) {
           .box-content {
-            width: calc(100% - 80px);
-            left: ${boxAlign === "left" ? "40px" : "auto"};
-            right: ${boxAlign === "right" ? "40px" : "auto"};
+            width: calc(100% - 80px) !important;
+            left: 40px !important;
+            right: 40px !important;
           }
         }
       `}</style>

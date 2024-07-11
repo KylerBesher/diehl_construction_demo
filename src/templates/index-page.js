@@ -137,6 +137,7 @@ export const pageQuery = graphql`
                 title
                 order
                 description
+                boxAlign
                 image{
                   childImageSharp {
                     gatsbyImageData(quality: 100, layout: FULL_WIDTH)

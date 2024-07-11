@@ -5,6 +5,7 @@ order: 9
 image: /img/egress_windows.jpeg
 featuredpost: false
 icon: 'windows'
+boxAlign: 'left'
 featuredimage: /img/chemex.jpg
 description: Enhance safety and natural light in your basement with our professional egress window installation services. Get in touch with us to explore your options and improve your home's livability.
 tags:

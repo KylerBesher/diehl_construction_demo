@@ -1,46 +1,48 @@
-import React, {useState} from "react"
-import { Link, useStaticQuery, graphql } from "gatsby"
-import { Facebook as FacebookIcon } from '@mui/icons-material';
-import logo from "../img/diehl_logo.png";
+import React, { useState } from "react";
+import { Link, useStaticQuery, graphql } from "gatsby";
+import PhoneIcon from '@mui/icons-material/Phone';
+import EmailIcon from '@mui/icons-material/Email';
+import logoAlt from "../img/diehl_logo_alt.png";
 
 export default function Header() {
   const data = useStaticQuery(graphql`
     query HeaderQuery {
-          allMarkdownRemark(
-            sort: { order: ASC, fields: [frontmatter___order, frontmatter___title] }
-            filter: { frontmatter: { templateKey: { eq: "general-page" } } }
-          ) {
-            edges {
-              node {
-                id
-                frontmatter {
-                  title
-                  order
-                }
-                fields {
-                  slug
-                }
-              }
+      allMarkdownRemark(
+        sort: { order: ASC, fields: [frontmatter___order, frontmatter___title] }
+        filter: { frontmatter: { templateKey: { eq: "general-page" } } }
+      ) {
+        edges {
+          node {
+            id
+            frontmatter {
+              title
+              order
+            }
+            fields {
+              slug
             }
           }
         }
-  `)
+      }
+    }
+  `);
 
   const pages = data?.allMarkdownRemark?.edges || [];
-  const height = '80px';
+  const height = '40px';
   const [isActive, setIsActive] = useState(false);
+
   return (
     <>
       <nav
         style={{ position: "fixed", width: "100%", zIndex: "1000", height: height }}
-        className="navbar is-transparent"
+        className="navbar has-background-black"
         role="navigation"
         aria-label="main-navigation"
       >
         <div className="container">
           <div className="navbar-brand">
             <Link to="/" className="navbar-item" title="Logo">
-              <img src={logo} alt="Diehl Construction" style={{ width: "88px" }} />
+              <img src={logoAlt} alt="Diehl Construction" />
             </Link>
             <button
               className={`navbar-burger burger ${isActive ? "is-active" : ""}`}
@@ -54,31 +56,40 @@ export default function Header() {
           </div>
           <ul
             id="navMenu"
-            className={`navbar-start has-text-centered navbar-menu ${isActive ? "is-active" : ""}`}
+            className={`navbar-start has-text-centered navbar-menu has-background-black ${isActive ? "is-active" : ""}`}
           >
             {pages.length ? (
               pages.map(({ node: page }) => (
                 <li key={page.id} className="navbar-item" style={{ padding: "0px" }}>
-                  <Link className="navbar-item" to={page.fields.slug}>
+                  <Link className="navbar-link navbar-item common-link" to={page.fields.slug} activeClassName="is-active-link">
                     {page.frontmatter.title}
                   </Link>
                 </li>
               ))
             ) : (
               <li className="navbar-item" style={{ padding: "0px" }}>
-                <span>No pages found</span>
+                <span className="common-link">No pages found</span>
               </li>
             )}
+            <li key={'contact'} className="navbar-item" style={{ padding: "0px" }}>
+              <Link className="navbar-link navbar-item common-link" to='/contact' activeClassName="is-active-link">
+                Contact
+              </Link>
+            </li>
             <li className="navbar-end has-text-centered">
-              <a
-                className="navbar-item"
-                href="https://www.facebook.com/basementrepair"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a className="navbar-item navbar-link common-link has-text-primary" href="tel:+17858273804">
                 <span className="icon">
-                  <FacebookIcon color="primary" />
+                  <PhoneIcon />
                 </span>
+                <span style={{ marginLeft: '5px' }}>Call us</span>
+              </a>
+            </li>
+            <li className="navbar-item has-text-centered">
+              <a className="navbar-item navbar-link common-link has-text-primary" href="mailto:diehlconstructionks@gmail.com">
+                <span className="icon">
+                  <EmailIcon />
+                </span>
+                <span style={{ marginLeft: '5px' }}>Email us</span>
               </a>
             </li>
           </ul>
