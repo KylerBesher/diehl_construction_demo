@@ -58,26 +58,20 @@ export default function Header() {
             id="navMenu"
             className={`navbar-start has-text-centered navbar-menu has-background-black ${isActive ? "is-active" : ""}`}
           >
-            {pages.length ? (
-              pages.map(({ node: page }) => (
-                <li key={page.id} className="navbar-item" style={{ padding: "0px" }}>
-                  <Link className="navbar-link navbar-item common-link" to={page.fields.slug} activeClassName="is-active-link">
-                    {page.frontmatter.title}
-                  </Link>
-                </li>
-              ))
-            ) : (
-              <li className="navbar-item" style={{ padding: "0px" }}>
-                <span className="common-link">No pages found</span>
+            {pages.map(({ node: page }) => (
+              <li key={page.id} className="navbar-item" style={{ padding: "0px" }}>
+                <Link className=" navbar-item " to={page.fields.slug} activeClassName="is-active-link">
+                  {page.frontmatter.title}
+                </Link>
               </li>
-            )}
+            ))}
             <li key={'contact'} className="navbar-item" style={{ padding: "0px" }}>
-              <Link className="navbar-link navbar-item common-link" to='/contact' activeClassName="is-active-link">
+              <Link className=" navbar-item " to='/contact' activeClassName="is-active-link">
                 Contact
               </Link>
             </li>
             <li className="navbar-end has-text-centered">
-              <a className="navbar-item navbar-link common-link has-text-primary" href="tel:+17858273804">
+              <a className="navbar-item   " href="tel:+17858273804">
                 <span className="icon">
                   <PhoneIcon />
                 </span>
@@ -85,7 +79,7 @@ export default function Header() {
               </a>
             </li>
             <li className="navbar-item has-text-centered">
-              <a className="navbar-item navbar-link common-link has-text-primary" href="mailto:diehlconstructionks@gmail.com">
+              <a className="navbar-item   " href="mailto:diehlconstructionks@gmail.com">
                 <span className="icon">
                   <EmailIcon />
                 </span>

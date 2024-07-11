@@ -103,12 +103,9 @@ footer.footer
 .has-span-inside span 
   color: $primary 
 
-
 .is-active-link
   position: relative
   display: inline-block
-  // background-color: $primary 
-  // color:black
 
 .is-active-link::after
   content: ""
@@ -117,17 +114,28 @@ footer.footer
   bottom: -2px 
   width: 100%
   height: 4px 
-  color: black
   background-color: $primary 
 
-
-.navbar-link
-    color: white
-
-.navbar-link
+.navbar-item
+  background-color: transparent
+  color: white
   &:hover
-    font-color: $primary 
-    background-color: $primary 
+    color: $primary
+    background-color: transparent
+
+.navbar-link
+  color: white
+  &:hover
+    color: $primary
 
 .navbar-burger
   color: $primary 
+
+// Styles for small screens
+.navbar-menu.is-active
+  background-color: black
+  .navbar-item, .navbar-link
+    color: white
+    &:hover
+      color: $primary
+      background-color: transparent

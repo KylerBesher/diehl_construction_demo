@@ -61,7 +61,7 @@ export default function Testimonials({ testimonials }) {
         >
           {testimonials.map((testimonial, index) => (
             <div key={index} className="carousel-item">
-              <div className="box" style={{ height: `${maxHeight}px` }}>
+              <div className="tbox" style={{ height: `${maxHeight}px` }}>
                 <div
                   className="content has-text-centered"
                   ref={(el) => (refs.current[index] = el)}
@@ -96,7 +96,7 @@ export default function Testimonials({ testimonials }) {
         .testimonials-section {
           padding: 3rem 1.5rem;
         }
-        .box {
+        .tbox {
           background-color: #ffffff;
           border: 1px solid #e1e1e1;
           border-radius: 8px;
