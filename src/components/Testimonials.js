@@ -43,7 +43,7 @@ export default function Testimonials({ testimonials }) {
     <section className="section testimonials-section">
       <div className="container">
         <div className="has-text-centered">
-          <h2 className="title is-2 has-text-primary" style={{marginBottom: '2rem'}}>Customer Showcase</h2>
+          <h2 className="title is-2 has-text-secondary" style={{marginBottom: '2rem'}}>Customer Showcase</h2>
         </div>
         <Carousel
           showThumbs={false}

@@ -22,7 +22,7 @@ export default function AboutUs(props) {
         <div className="column is-half has-text-left is-flex is-align-items-center" style={{ padding: '0' }}>
           <div className="content" style={{ width: '100%', padding: '20px', display: 'flex', flexDirection: 'column', justifyContent: 'center', height: '100%' }}>
             {title && (
-              <h1 className="title is-1 has-text-weight-bold has-text-primary" style={{ marginBottom: '1rem' }}>
+              <h1 className="title is-1 has-text-weight-bold has-text-secondary" style={{ marginBottom: '2rem' }}>
                 {title}
               </h1>
             )}
