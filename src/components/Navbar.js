@@ -3,6 +3,8 @@ import { Link, useStaticQuery, graphql } from "gatsby";
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
 import logoAlt from "../img/diehl_logo_alt.png";
+import ScrollLink from "./ScrollToFooter";
+import ReactHtmlParser from "react-html-parser";
 
 export default function Header() {
   const data = useStaticQuery(graphql`
@@ -16,6 +18,7 @@ export default function Header() {
             id
             frontmatter {
               title
+              navTitle
               order
             }
             fields {
@@ -41,8 +44,8 @@ export default function Header() {
       >
         <div className="container">
           <div className="navbar-brand">
-            <Link to="/" className="navbar-item" title="Logo">
-              <img src={logoAlt} alt="Diehl Construction" />
+            <Link to="/" className="navbar-ite" title="Logo">
+              <img src={logoAlt} style={{ height: '55px', marginTop: '10px', marginRight: '15px' }} alt="Diehl Construction" />
             </Link>
             <button
               className={`navbar-burger burger ${isActive ? "is-active" : ""}`}
@@ -61,15 +64,16 @@ export default function Header() {
             {pages.map(({ node: page }) => (
               <li key={page.id} className="navbar-item" style={{ padding: "0px" }}>
                 <Link className=" navbar-item " to={page.fields.slug} activeClassName="is-active-link">
-                  {page.frontmatter.title}
+                  {ReactHtmlParser(page.frontmatter.navTitle || page.frontmatter.title)}
                 </Link>
               </li>
             ))}
             <li key={'contact'} className="navbar-item" style={{ padding: "0px" }}>
-              <Link className=" navbar-item " to='/contact' activeClassName="is-active-link">
+              <ScrollLink classes="navbar-item" targetId="footer">
                 Contact
-              </Link>
+              </ScrollLink>
             </li>
+
             <li className="navbar-end has-text-centered">
               <a className="navbar-item   " href="tel:+17858273804">
                 <span className="icon">

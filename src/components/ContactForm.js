@@ -10,7 +10,13 @@ function encode(data) {
 export default class ContactForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { isValidated: false };
+    this.state = { 
+      name: '', 
+      email: '', 
+      phone: '', 
+      message: '',
+      isValidated: false 
+    };
   }
 
   handleChange = (e) => {
@@ -35,7 +41,7 @@ export default class ContactForm extends React.Component {
   render() {
     const { fontColor } = this.props;
     const labelStyle = { color: fontColor };
-    const inputStyle = { color: fontColor, borderColor: fontColor };
+    const inputStyle = { color: 'black', borderColor: fontColor };
 
     return (
       <form
@@ -62,6 +68,7 @@ export default class ContactForm extends React.Component {
               className="input"
               type={"text"}
               name={"name"}
+              value={this.state.name}
               onChange={this.handleChange}
               id={"name"}
               required={true}
@@ -78,6 +85,7 @@ export default class ContactForm extends React.Component {
               className="input"
               type={"email"}
               name={"email"}
+              value={this.state.email}
               onChange={this.handleChange}
               id={"email"}
               required={true}
@@ -94,6 +102,7 @@ export default class ContactForm extends React.Component {
               className="input"
               type={"tel"}
               name={"phone"}
+              value={this.state.phone}
               onChange={this.handleChange}
               id={"phone"}
               required={true}
@@ -109,6 +118,7 @@ export default class ContactForm extends React.Component {
             <textarea
               className="textarea"
               name={"message"}
+              value={this.state.message}
               onChange={this.handleChange}
               id={"message"}
               required={true}

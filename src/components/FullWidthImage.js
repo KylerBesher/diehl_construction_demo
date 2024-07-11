@@ -3,11 +3,12 @@ import PropTypes from "prop-types";
 import { Link } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import ReactHtmlParser from "react-html-parser";
+import ScrollLink from "./ScrollToFooter";
 
 export default function FullWidthImage(props) {
   const {
     height = '50vh',
-    minHeight = '800px',
+    minHeight = '600px',
     img,
     title,
     subheading,
@@ -79,7 +80,7 @@ export default function FullWidthImage(props) {
               <hr />
               {subheading && (
                 <h3
-                  className="has-text-weight-bold  is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
+                  className="has-text-weight-bold  is-size-6-mobile is-size-6-tablet is-size-5-widescreen"
                   style={{
                     color: "#fff",
                     marginBottom: ".5em",
@@ -90,9 +91,9 @@ export default function FullWidthImage(props) {
                 </h3>
               )}
               <div style={{ marginTop: "1em" }}>
-                <Link className="btn has-background-primary" to="/contact">
+                <ScrollLink classes="btn has-background-primary" targetId="footer">
                   Get a Free Estimate
-                </Link>
+                </ScrollLink>
               </div>
             </div>
           </div>

@@ -52,7 +52,7 @@ export default function Testimonials({ testimonials }) {
           swipeable={true}
           autoPlay
           infiniteLoop
-          interval={5000}
+          interval={10000}
           showArrows={false}
           centerMode={false}
           centerSlidePercentage={50} // Adjust to show 3 images at a time

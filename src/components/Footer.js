@@ -34,7 +34,7 @@ const Footer = () => {
   const pages = data?.allMarkdownRemark?.edges || [];
 
   return (
-    <footer className="footer has-background-black has-text-white-ter">
+    <footer id="footer" className="footer has-background-black has-text-white-ter">
       <div className="content has-text-centered">
         <img src={logo} alt="Diehl Construction" style={{ width: "14em" }} />
       </div>
@@ -54,18 +54,18 @@ const Footer = () => {
             <div className="column is-6">
               <div style={{ padding: "1rem" }}>
                 <h2 className="has-text-primary title is-2 ">Find Us</h2>
-                <div className="contact-info" style={{ textAlign: "left", color: "white", textDecoration:"underline", marginBottom: '1rem'}}>
+                <div className="contact-info" style={{ textAlign: "left", color: "white", marginBottom: '1rem'}}>
                   <div className="contact-item" style={{ display: "flex", alignItems: "center", marginBottom: "1rem" }}>
                     <PhoneIcon className="has-text-primary" />
-                    <a href="tel:+17858273804" style={{ marginLeft: "0.5rem", color: "white" }}>(785) 827-3804</a>
+                    <a className="underline-hover" href="tel:+17858273804" style={{ marginLeft: "0.5rem", color: "white" }}>(785) 827-3804</a>
                   </div>
                   <div className="contact-item" style={{ display: "flex", alignItems: "center", marginBottom: "1rem" }}>
                     <EmailIcon className="has-text-primary" />
-                    <a href="mailto:diehlconstructionks@gmail.com" style={{ marginLeft: "0.5rem", color: "white" }}>diehlconstructionks@gmail.com</a>
+                    <a className="underline-hover" href="mailto:diehlconstructionks@gmail.com" style={{ marginLeft: "0.5rem", color: "white" }}>diehlconstructionks@gmail.com</a>
                   </div>
                   <div className="contact-item" style={{ display: "flex", alignItems: "center" }}>
                     <LocationOnIcon className="has-text-primary" />
-                    <a href="https://www.google.com/maps?q=521+Bishop+St+Salina,+KS+67401" target="_blank" rel="noopener noreferrer" style={{ marginLeft: "0.5rem", color: "white" }}>
+                    <a className="underline-hover" href="https://www.google.com/maps?q=521+Bishop+St+Salina,+KS+67401" target="_blank" rel="noopener noreferrer" style={{ marginLeft: "0.5rem", color: "white" }}>
                       521 Bishop St Salina, KS 67401
                     </a>
                   </div>

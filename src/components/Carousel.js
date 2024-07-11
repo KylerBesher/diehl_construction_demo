@@ -23,6 +23,7 @@ const CarouselWrapper = ({ images }) => {
         autoPlay
         infiniteLoop
         swipeable
+        interval={10000}
         useKeyboardArrows
         className="custom-carousel"
         centerMode

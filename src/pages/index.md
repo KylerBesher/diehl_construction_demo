@@ -4,12 +4,19 @@ title: Diehl Construction
 image: /img/home_image.jpeg
 
 heading: Foundation Repair <span>You Can Trust</span>
-subheading: With nearly 50 years of experience, Diehl Construction specializes in foundation repair and waterproofing. We deliver lasting solutions for homes and businesses, ensuring your structures remain strong and secure. Experience the craftsmanship and integrity of a family-owned business dedicated to quality and customer satisfaction. Choose Diehl Construction for reliable service and peace of mind.
+subheading: With nearly 50 years of experience, Diehl Construction specializes in foundation repair, delivering lasting solutions for homes and businesses. Our family-owned and operated business is deeply committed to our local communities in Salina, Abilene, Lindsborg, and Concordia. Since 1975, we have been dedicated to ensuring your structures remain strong and secure with expert foundation repair services. At Diehl Construction, we pride ourselves on quality workmanship, reliability, and customer satisfaction.
 
 mainpitch:
-  title: About Us
+  title: Why Choose Diehl Construction?
   image: /img/crew.jpeg
-  description: Diehl Construction is a family-owned and operated business, deeply committed to our local communities in Salina, Abilene, Lindsborg, and Concordia. Starting in 1975, we have dedicated nearly 50 years to serving our neighbors with expert foundation repair and waterproofing services. Our focus is on providing lasting, high-quality solutions that meet your needs. We take genuine pride in our work, ensuring every job is done right. At Diehl Construction, we don’t just aim to complete a project; we strive to exceed your expectations and build lasting relationships. Our dedication to quality, integrity, and customer satisfaction sets us apart as Kansas’ premier foundation repair and waterproofing company.
+  description: |
+    Choosing Diehl Construction for your basement and foundation repair needs means partnering with a company that values quality, integrity, and customer satisfaction. Here are some reasons why homeowners trust us:
+
+    - **Experienced Team:** Our professionals have extensive experience in construction and foundation repair, staying updated with the latest techniques and best practices.
+    - **Customized Solutions:** We tailor our solutions to meet the unique needs of each property, ensuring effective and lasting results.
+    - **Quality Materials:** We use only the highest quality materials and products, ensuring durability and reliability for your peace of mind.
+    - **Proven Track Record:** With a long history of successful projects and satisfied customers, we have built a reputation for excellence in the industry.
+
 
 testimonials: 
   - name: Margaret V.
