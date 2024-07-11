@@ -48,6 +48,7 @@ export default function Header() {
               <img src={logoAlt} style={{ height: '55px', marginTop: '10px', marginRight: '15px' }} alt="Diehl Construction" />
             </Link>
             <button
+              aria-label="menu"
               className={`navbar-burger burger ${isActive ? "is-active" : ""}`}
               aria-expanded={isActive}
               onClick={() => setIsActive(!isActive)}

@@ -85,10 +85,10 @@ export default function Testimonials({ testimonials }) {
           ))}
         </Carousel>
         <div className="buttons are-centered">
-          <button className="button is-primary" onClick={handlePrev}>
+          <button aria-label="previous" className="button is-primary" onClick={handlePrev}>
             <ArrowBackIcon />
           </button>
-          <button className="button is-primary" onClick={handleNext}>
+          <button aria-label="next" className="button is-primary" onClick={handleNext}>
             <ArrowForwardIcon />
           </button>
         </div>

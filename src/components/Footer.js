@@ -47,7 +47,7 @@ const Footer = () => {
               <div className="container" id="contact-us">
                 <div className="content">
                   <h2 className="has-text-primary title is-2 ">Get in Touch With Us</h2>
-                  <h4 className="has-text-white is-4" style={{ color: 'white' }}>Whether you are looking for an estimate, have a question, or just want to say hello, we would love to hear from you! Fill out the form below and we'll get back to you as soon as we can.</h4>
+                  <p className="has-text-white is-5" style={{ color: 'white' }}>Whether you are looking for an estimate, have a question, or just want to say hello, we would love to hear from you! Fill out the form below and we'll get back to you as soon as we can.</p>
                   <ContactForm fontColor={'white'} />
                 </div>
               </div>
@@ -77,11 +77,12 @@ const Footer = () => {
                   Diehl Construction is a family-owned and operated business specializing in foundation repair and waterproofing services in Kansas since 1975.
                 </p> */}
                 <iframe
+                  title="maps-iframe"
                   width="100%"
                   height="380"
                   style={{ border: 0 }}
                   loading="lazy"
-                  allowfullscreen
+                  allowFullScreen
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d562.9534681953385!2d-97.61446857056248!3d38.84712275924419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87bccf61a9bf52d9%3A0x657dededa1d24bf9!2sDiehl%20Construction!5e0!3m2!1sen!2sus!4v1720673169498!5m2!1sen!2sus"
 
                 ></iframe>

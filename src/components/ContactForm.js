@@ -127,7 +127,7 @@ export default class ContactForm extends React.Component {
           </div>
         </div>
         <div className="field">
-          <button className="button is-link has-background-primary" type="submit" style={labelStyle}>
+          <button className="button is-link has-background-primary has-text-black" type="submit" style={labelStyle}>
             Send
           </button>
         </div>
