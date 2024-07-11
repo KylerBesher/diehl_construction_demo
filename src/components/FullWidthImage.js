@@ -8,7 +8,7 @@ import ScrollLink from "./ScrollToFooter";
 export default function FullWidthImage(props) {
   const {
     height = '50vh',
-    minHeight = '600px',
+    minHeight = '650px',
     img,
     title,
     subheading,

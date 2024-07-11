@@ -62,28 +62,28 @@ export default function Header() {
             className={`navbar-start has-text-centered navbar-menu has-background-black ${isActive ? "is-active" : ""}`}
           >
             {pages.map(({ node: page }) => (
-              <li key={page.id} className="navbar-item" style={{ padding: "0px" }}>
-                <Link className=" navbar-item " to={page.fields.slug} activeClassName="is-active-link">
+              <li key={page.id} className="navbar-custom" style={{ padding: "0px" }}>
+                <Link className=" navbar-custom " to={page.fields.slug} activeClassName="is-active-link">
                   {ReactHtmlParser(page.frontmatter.navTitle || page.frontmatter.title)}
                 </Link>
               </li>
             ))}
-            <li key={'contact'} className="navbar-item" style={{ padding: "0px" }}>
-              <ScrollLink classes="navbar-item" targetId="footer">
+            <li key={'contact'} className="navbar-custom" style={{ padding: "0px" }}>
+              <ScrollLink classes="navbar-custom" targetId="footer">
                 Contact
               </ScrollLink>
             </li>
 
             <li className="navbar-end has-text-centered">
-              <a className="navbar-item   " href="tel:+17858273804">
+              <a className="navbar-custom   " href="tel:+17858273804">
                 <span className="icon">
                   <PhoneIcon />
                 </span>
                 <span style={{ marginLeft: '5px' }}>Call us</span>
               </a>
             </li>
-            <li className="navbar-item has-text-centered">
-              <a className="navbar-item   " href="mailto:diehlconstructionks@gmail.com">
+            <li className="navbar-custom has-text-centered">
+              <a className="navbar-custom   " href="mailto:diehlconstructionks@gmail.com">
                 <span className="icon">
                   <EmailIcon />
                 </span>

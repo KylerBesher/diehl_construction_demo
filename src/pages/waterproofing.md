@@ -2,6 +2,7 @@
 templateKey: general-page
 title: Waterproofing <span>Services</span>
 navTitle: Waterproofing
+buttonText: Discover Waterproofing
 order: 3
 image: /img/waterproofing.jpeg
 featuredpost: false

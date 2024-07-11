@@ -2,6 +2,7 @@
 templateKey: general-page
 title: Basement & Foundation <span>Repair</span>
 navTitle: Foundation Repair
+buttonText: Explore Foundation Repair
 order: 0
 image: /img/foundation_repair.jpeg
 date: 2017-01-04T15:04:10.000Z

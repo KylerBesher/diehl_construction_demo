@@ -42,7 +42,7 @@ const FeatureGrid = ({ gridItems }) => (
         borderRadius: "0px",
       };
 
-      const { alt = "", childImageSharp, image, text, icon, name, slug } = item;
+      const { alt = "", childImageSharp, image, text, icon, name, slug, buttonText } = item;
       const imageData = getImage(childImageSharp || (image && image.childImageSharp));
 
       return (
@@ -76,7 +76,7 @@ const FeatureGrid = ({ gridItems }) => (
 
                 <p style={{ margin: "2em 0 2em 0" }}>{alt}</p>
                 <Link className="btn has-background-primary" to={slug} >
-                  LEARN MORE
+                  {buttonText || "Learn More"}
                 </Link>
               </div>
             </section>

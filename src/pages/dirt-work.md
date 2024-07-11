@@ -1,7 +1,9 @@
 ---
 templateKey: general-page
 title: 'Dirt <span>Working</span>'
+navTitle: Dirt Working
 order: 6
+buttonText: Uncover Dirt Work
 image: /img/dirt_work.jpeg
 icon: 'dirtworking'
 featuredpost: true

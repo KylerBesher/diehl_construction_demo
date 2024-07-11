@@ -2,6 +2,7 @@
 templateKey: general-page
 title: Egress Window <span>Installation</span>
 navTitle: Egress Windows
+buttonText: View Egress Windows
 order: 9
 image: /img/egress_windows.jpeg
 featuredpost: false
